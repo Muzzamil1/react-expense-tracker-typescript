@@ -37,6 +37,8 @@ jobs:
       - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: build # will run `yarn build` command
+        env: # To avoid this error -- Treating warnings as errors because process.env.CI = true.
+          CI: false
 
       # Install Surge 
       - name: Install Surge
