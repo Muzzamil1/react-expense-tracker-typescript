@@ -1,0 +1,83 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   min-height: 100vh;
+   background-color: #e7f1fb;
+   display: flex;
+   /* flex-direction: colum; */
+   /** MJ --- Justify works on Main axis */
+   justify-content: center;
+   /** AC --- Align works on Cross axis */
+   align-items: center;
+   letter-spacing: 1px;
+}
+
+.Header-title {
+   text-align: center;
+   margin-bottom: 0.7rem;
+}
+
+/* .App-buttons button {
+  display: block;
+} */
+
+.App-buttons {
+   /* flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: stretch; */
+   margin-top: 0.5rem;
+   display: flex;
+   gap: 12px;
+   /* justify-content: flex-end; */
+}
+
+.App-buttons button {
+   flex-grow: 1;
+}
+
+.btn-primary {
+   margin-right: 8px;
+   border-color: rgb(40, 96, 144) !important;
+   box-shadow: rgb(0 0 0 / 8%) 0px 1px 1px inset,
+      rgb(76 174 76 / 60%) 0px 0px 8px;
+   cursor: pointer;
+   padding: 0.5rem 1rem;
+   font-size: 1.25rem;
+   line-height: 1.5;
+   border-radius: 0.3rem;
+   color: #fff;
+   background-color: #007bff;
+   text-decoration: none;
+   border: 1px solid transparent;
+}
+
+.btn-cancel {
+   margin-right: 8px;
+   cursor: pointer;
+   padding: 0.5rem 1rem;
+   font-size: 1.25rem;
+   line-height: 1.5;
+   border-radius: 0.3rem;
+   font-weight: 400;
+   color: #007bff;
+   text-decoration: none;
+   border: 1px solid transparent;
+   background-color: #fff;
+}
+
+.btn.focus,
+.btn:focus {
+   outline: 0;
+   box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+}
+
+.btn-link.focus,
+.btn-link:focus {
+   text-decoration: underline;
+}

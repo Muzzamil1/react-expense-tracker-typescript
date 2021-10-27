@@ -1,0 +1,42 @@
+# dependencies
+/resources
+/node_modules
+/.pnp
+.pnp.js
+devDep.txt
+
+# testing
+/coverage
+
+# production
+/build
+
+# npmjs
+/dist
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+
+commit.sh
+
+# VS Code
+.vscode/
+*.code-workspace
+# Local History for Visual Studio Code
+.history/
+
+
+
+
+

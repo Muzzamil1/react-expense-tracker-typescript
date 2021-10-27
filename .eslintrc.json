@@ -1,0 +1,392 @@
+{
+   "extends": [
+      // "eslint-config-prettier",
+      "eslint:recommended",
+      "plugin:import/recommended", // import order
+      "plugin:jsx-a11y/recommended",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:react-redux/recommended",
+      "plugin:sonarjs/recommended",
+      "plugin:unicorn/recommended",
+      "airbnb-typescript", // this is same as "airbnb-typescript/base",
+      "plugin:import/typescript",
+      "plugin:@typescript-eslint/recommended",
+      // "plugin:@typescript-eslint/recommended-requiring-type-checking", //! This was making the vscode slow on save
+      // "plugin:prettier/recommended",
+      "prettier"
+      // "prettier/@typescript-eslint" //"prettier/@typescript-eslint" has been merged into "prettier" in eslint-config-prettier 8.0.0. See: https://github.com/prettier/eslint-config-prettier/blob/main/CHANGELOG.md#version-800-2021-02-21
+   ],
+   "plugins": [
+      "prettier",
+      "import",
+      "jsx-a11y",
+      "react",
+      "react-hooks",
+      "react-redux",
+      "sonarjs",
+      "unicorn",
+      "deprecate",
+      "@typescript-eslint"
+      // "deprecation" //! This was making the vscode slow on save
+   ],
+   "parser": "@typescript-eslint/parser",
+   "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module",
+      // "tsconfigRootDir": __dirname,
+      // "project": ["./tsconfig.eslint.json"], // could be tsconfig.json too
+      // https://stackoverflow.com/a/68336747
+      "project": ["./tsconfig.json"],
+      "ignorePatterns": ["babel.config.js"],
+      "ecmaFeatures": {
+         "jsx": true
+      }
+   },
+   "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+   },
+   "ignorePatterns": [
+      // "temp.js",
+      // "**/vendor/*.js"
+      "/resources/*"
+   ],
+   "rules": {
+      // "prettier/prettier": [
+      //    "warn",
+      //    {
+      //     "singleQuote": true,
+      //     "jsxSingleQuote": true
+      //       // "useTabs": false,
+      //       // "tabWidth": 3,
+      //       // "endOfLine": "auto"
+      //    }
+      // ],
+      // ----------- Typescript rules -----------------
+      // https://javascript.plainenglish.io/setting-eslint-and-prettier-on-a-react-typescript-project-2021-22993565edf9
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-use-before-define": ["error"],
+      "react/jsx-filename-extension": [
+         "warn",
+         {
+            "extensions": [".tsx"]
+         }
+      ],
+      "import/extensions": [
+         "error",
+         "ignorePackages",
+         {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never"
+         }
+      ],
+      "no-shadow": "off",
+      "@typescript-eslint/no-shadow": ["error"],
+      // "@typescript-eslint/explicit-function-return-type": [
+      //   "off",
+      //   {
+      //     "allowExpressions": true
+      //   }
+      // ],
+      "@typescript-eslint/explicit-module-boundary-types": 0,
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/no-empty-interface": "off",
+      // "@typescript-eslint/explicit-function-return-type": 0,
+      "max-len": [
+         "off",
+         {
+            "code": 80
+         }
+      ],
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      //
+      // "deprecation/deprecation": "warn", //! This was making the vscode slow on save
+      "import/namespace": "off",
+      "import/no-extraneous-dependencies": "off",
+      "import/default": "off",
+      "react/display-name": "off",
+      // ---------------------------------------------
+      // unicorn
+      "unicorn/filename-case": "off",
+      "unicorn/prefer-query-selector": 0,
+      //  "unicorn/filename-case": [
+      //    "error",
+      //    {
+      //      "cases": {
+      //        "camelCase": true,
+      //        "pascalCase": true
+      //      }
+      //    }
+      //  ],
+      "unicorn/prevent-abbreviations": "off",
+      //  "unicorn/prefer-module": "off",
+      //
+      "unicorn/no-null": 0,
+      "unicorn/no-array-reduce": 0,
+      "react/react-in-jsx-scope": "off", // As now react doesw not need to import "React" in each component
+      // Use single quotes
+      "quotes": ["error", "single"],
+      "jsx-quotes": ["warn", "prefer-single"],
+      //  Add props on each line
+      "react/jsx-first-prop-new-line": [
+         1,
+         "multiline"
+         // "always"
+      ],
+      "react/jsx-wrap-multilines": [
+         "error",
+         {
+            "declaration": "parens-new-line",
+            "assignment": "parens-new-line",
+            "return": "parens-new-line",
+            "arrow": "parens-new-line",
+            "condition": "parens-new-line",
+            "logical": "parens-new-line",
+            "prop": "parens-new-line"
+         }
+      ],
+      "react/jsx-indent-props": [1, 2],
+      "react/jsx-newline": [
+         1,
+         {
+            "prevent": false
+         }
+      ],
+      "react/jsx-max-props-per-line": [
+         1,
+         {
+            "maximum": 1,
+            "when": "always"
+         }
+      ],
+      "react/jsx-closing-bracket-location": [
+         1,
+         {
+            "nonEmpty": "tag-aligned",
+            "selfClosing": "tag-aligned"
+         }
+      ],
+      "no-multiple-empty-lines": [
+         "warn",
+         {
+            "max": 1
+         }
+      ],
+      // Disable prop types
+      "react/prop-types": 0,
+      //  Disable file extension
+      // "react/jsx-filename-extension": "off",
+      "react/jsx-uses-react": "error",
+      "react/jsx-uses-vars": "error",
+      "import/newline-after-import": 0,
+      "class-methods-use-this": 0,
+      "no-console": "off",
+      //   "no-unused-vars": ["warn"],
+      "no-unused-vars": 0,
+      "@typescript-eslint/no-unused-vars": ["error"],
+      //  "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
+      // Rules values that we can pass --> https://areknawo.com/creating-the-perfect-eslint-config/
+      // 0 ("off"), 1 ("warn") or 2 ("error")
+      "prefer-const": "warn",
+      // "no-use-before-define": "warn",
+      "import/prefer-default-export": "off",
+      "react/jsx-props-no-spreading": "off",
+      "no-undef": "error",
+      "react/jsx-no-undef": "error",
+      //   https://dev.to/otamnitram/sorting-your-imports-correctly-in-react-213m
+      //   https://github.com/prettier/prettier-vscode/issues/1277#issuecomment-621175180
+      "import/order": [
+         "warn",
+         {
+            "groups": ["builtin", "external", "internal"],
+            "pathGroups": [
+               {
+                  "pattern": "react",
+                  "group": "external",
+                  "position": "before"
+               }
+            ],
+            "pathGroupsExcludedImportTypes": ["react"],
+            "newlines-between": "always",
+            "alphabetize": {
+               "order": "asc",
+               "caseInsensitive": true
+            }
+         }
+      ],
+      //   https://www.gitmemory.com/issue/vtex/front-end-standards/32/575695001
+      "padding-line-between-statements": [
+         "warn",
+         // empty lines after declarations
+         {
+            "blankLine": "always",
+            "prev": [
+               // "const",
+               // "let",
+               // "var",
+               "return",
+               "case"
+            ],
+            "next": "*"
+         },
+         {
+            "blankLine": "always",
+            "prev": "*",
+            "next": "return"
+         },
+         // Always require blank lines after function
+         {
+            "blankLine": "always",
+            "prev": ["function"],
+            "next": "*"
+         },
+         {
+            "blankLine": "always",
+            "prev": "*",
+            "next": ["function"]
+         },
+         // Always require blank lines after multiline-expression --- For react hooks and setState
+         {
+            "blankLine": "always",
+            "prev": "*",
+            "next": "multiline-expression"
+         },
+         {
+            "blankLine": "always",
+            "prev": "multiline-expression",
+            "next": "*"
+         },
+         {
+            "blankLine": "always",
+            "prev": "*",
+            "next": "multiline-expression"
+         },
+         {
+            "blankLine": "always",
+            "prev": "multiline-expression",
+            "next": "*"
+         },
+         // Always require blank lines after directive (like 'use-strict'), except between directives
+         {
+            "blankLine": "always",
+            "prev": "directive",
+            "next": "*"
+         },
+         {
+            "blankLine": "any",
+            "prev": "directive",
+            "next": "directive"
+         },
+         // Always require blank lines after import, except between imports
+         {
+            "blankLine": "always",
+            "prev": "import",
+            "next": "*"
+         },
+         {
+            "blankLine": "any",
+            "prev": "import",
+            "next": "import"
+         },
+         // Always require blank lines before and after class declaration, if, do/while, switch, try
+         {
+            "blankLine": "always",
+            "prev": "*",
+            "next": ["if", "class", "for", "do", "while", "switch", "try"]
+         },
+         {
+            "blankLine": "always",
+            "prev": ["if", "class", "for", "do", "while", "switch", "try"],
+            "next": "*"
+         }
+      ]
+      //   https://gist.github.com/klimashkin/8e75dd8974d90669c4dfb99ef2f6ad60
+      //   "padding-line-between-statements": [
+      //      2,
+      //      // Always require blank lines after directive (like 'use-strict'), except between directives
+      //      { "blankLine": "always", "prev": "directive", "next": "*" },
+      //      { "blankLine": "any", "prev": "directive", "next": "directive" },
+      //      // Always require blank lines after import, except between imports
+      //      { "blankLine": "always", "prev": "import", "next": "*" },
+      //      { "blankLine": "any", "prev": "import", "next": "import" },
+      //      // Always require blank lines before and after every sequence of variable declarations and export
+      //      {
+      //         "blankLine": "always",
+      //         "prev": "*",
+      //         "next": ["const", "let", "var", "export"]
+      //      },
+      //      {
+      //         "blankLine": "always",
+      //         "prev": ["const", "let", "var", "export"],
+      //         "next": "*"
+      //      },
+      //      {
+      //         "blankLine": "any",
+      //         "prev": ["const", "let", "var", "export"],
+      //         "next": ["const", "let", "var", "export"]
+      //      },
+      //      // Always require blank lines before and after class declaration, if, do/while, switch, try
+      //      {
+      //         "blankLine": "always",
+      //         "prev": "*",
+      //         "next": ["if", "class", "for", "do", "while", "switch", "try"]
+      //      },
+      //      {
+      //         "blankLine": "always",
+      //         "prev": ["if", "class", "for", "do", "while", "switch", "try"],
+      //         "next": "*"
+      //      },
+      //      // Always require blank lines before return statements
+      //      { "blankLine": "always", "prev": "*", "next": "return" }
+      //   ]
+      //   "padding-line-between-statements": [
+      //      "warn",
+      //      {
+      //         "blankLine": "always",
+      //         "prev": ["const", "let", "var"],
+      //         "next": "*"
+      //      },
+      //      {
+      //         "blankLine": "any",
+      //         "prev": ["const", "let", "var"],
+      //         "next": ["const", "let", "var"]
+      //      },
+      //      { "blankLine": "always", "prev": ["case", "default"], "next": "*" }
+      //      //  { "blankLine": "always", "prev": "*", "next": "multiline-block-like" },
+      //      //  { "blankLine": "always", "prev": "multiline-block-like", "next": "*" },
+      //      //  {
+      //      //     "blankLine": "always",
+      //      //     "prev": "*",
+      //      //     "next": ["const", "let", "export"]
+      //      //  },
+      //      //  {
+      //      //     "blankLine": "always",
+      //      //     "prev": ["const", "let", "export"],
+      //      //     "next": "*"
+      //      //  },
+      //      //  {
+      //      //     "blankLine": "any",
+      //      //     "prev": ["const", "let", "export"],
+      //      //     "next": ["const", "let", "export"]
+      //      //  },
+      //      //  { "blankLine": "always", "prev": "*", "next": "return" }
+      //   ]
+   },
+   //    For JavaScript            -->       https://stackoverflow.com/a/62524418
+   // *  Better way without alias  -->       https://stackoverflow.com/a/57192652 (NOT alias but direct folder name in src)
+   //    For Typescript             -->      https://stackoverflow.com/a/63385127
+   "settings": {
+      "import/resolver": {
+         "node": {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"],
+            "moduleDirectory": ["node_modules", "src/"]
+         },
+         "extensions": [".js", ".jsx", ".ts", ".tsx", ".less", ".json", ".vue"]
+      }
+   }
+}
