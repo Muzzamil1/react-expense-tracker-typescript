@@ -30,7 +30,8 @@ jobs:
       - uses: borales/actions-yarn@v2.3.0
 #         with: {cmd: install --prod} # will run `yarn install --prod` command
         with:
-          cmd: install --production --frozen-lockfile # will run `yarn install --production --frozen-lockfile` command
+#           cmd: install --production --frozen-lockfile # will run `yarn install --production --frozen-lockfile` command
+          cmd: install  # will run `yarn install` command
 
       # Build react app
       - uses: borales/actions-yarn@v2.3.0
