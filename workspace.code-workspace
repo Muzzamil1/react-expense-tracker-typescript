@@ -34,16 +34,18 @@
          "**/.hg": true,
          "**/CVS": true,
          "**/.DS_Store": true,
+         "**/Thumbs.db": true,
          ".history": true,
          ".vscode": true,
          "**/node_modules": true,
          "node_modules": true,
          "LICENSE": true,
-         "*.md": true,
+         "*.md": false,
          "build": true
       },
       "emmet.includeLanguages": {
          "javascript": "javascriptreact"
-      }
+      },
+      "explorerExclude.backup": null
    }
 }
